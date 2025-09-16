@@ -1,39 +1,46 @@
 # AWS Security Tools
 
-This directory contains various AWS security scripts and tools for monitoring and auditing AWS infrastructure.
+This repository contains Python scripts for automating and auditing various AWS security operations.
 
-## Scripts Overview
+## Script Summaries
 
-• **ec2_iam_project.py** - EC2 and IAM management utilities
-• **iam_boto3.py** - IAM operations using boto3
-• **iam_policy_audit.py** - IAM policy auditing tool
-• **iamrole_tf.py** - IAM role management with Terraform integration
-• **s3_enable.py** - S3 security configuration tool
+### [ec2_iam_project.py](https://github.com/jibin006/Aws_cloud-security/blob/main/AWS/ec2_iam_project.py)
+- **Purpose:** Automates the creation of IAM users and attachment of a specified managed IAM policy. Uses boto3 and prompts for username and policy ARN. Handles errors for both user creation and policy attachment.
 
-## Getting Started
+### [iam_boto3.py](https://github.com/jibin006/Aws_cloud-security/blob/main/AWS/iam_boto3.py)
+- **Purpose:** Provides a simple script to create a new IAM user and attach a selected IAM policy via boto3. It prompts for user input and handles errors in user creation and policy attachment.
 
-1. Install required dependencies:
-   ```bash
-   pip install boto3
-   ```
+### [iam_policy_audit.py](https://github.com/jibin006/Aws_cloud-security/blob/main/AWS/iam_policy_audit.py)
+- **Purpose:** Audits all attached managed IAM policies for every IAM user in your account. It fetches and inspects policy JSON to report potentially risky wildcards (like `*` or `s3:*`) in the policy actions, allowing you to detect over-privileged permissions.
 
-2. Configure AWS credentials:
-   ```bash
-   aws configure
-   ```
+### [iamrole_tf.py](https://github.com/jibin006/Aws_cloud-security/blob/main/AWS/iamrole_tf.py)
+- **Purpose:** Script (details not displayed here) likely focused on managing AWS IAM roles, possibly with integration for Terraform-managed resources or related automation functions.
 
-3. Run any script:
-   ```bash
-   python <script_name>.py
-   ```
+### [s3_enable.py](https://github.com/jibin006/Aws_cloud-security/blob/main/AWS/s3_enable.py)
+- **Purpose:** Script (details not displayed here), typically for enabling certain security configurations on AWS S3 buckets, such as enforcing encryption, modifying bucket policies, or automated auditing.
+
+### [vpc_security_checker.py](https://github.com/jibin006/Aws_cloud-security/blob/main/AWS/vpc_security_checker.py)
+- **Purpose:** Audits VPC-level security, specifically:
+  - Detects Security Groups with open inbound rules (0.0.0.0/0 and ::/0).
+  - Identifies private subnets that have routes to an Internet Gateway (a common misconfiguration).
+  - Prints detailed alerts for each finding to help you improve your VPC security posture.
+
+---
+
+## Usage
+
+- Ensure you have installed `boto3` (`pip install boto3`)
+- Configure AWS credentials (`aws configure`)
+- Run any script:  
+  `python script_name.py`
+
+---
 
 ## Security Best Practices
 
-- Always test scripts in a non-production environment first
-- Ensure proper IAM permissions are configured with least privilege principle
-- Review and understand each script before execution
-- Regularly audit your AWS infrastructure using these tools
+- Always test scripts in non-production environments first.
+- Apply least-privilege IAM permissions for script execution.
+- Review all code before execution.
+- Regularly audit AWS environments using these scripts.
 
-## Contributing
-
-Feel free to contribute improvements or additional security tools to this collection.
+---
