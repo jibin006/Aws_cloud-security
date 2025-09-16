@@ -14,10 +14,10 @@ This repository contains Python scripts for automating and auditing various AWS 
 - **Purpose:** Audits all attached managed IAM policies for every IAM user in your account. It fetches and inspects policy JSON to report potentially risky wildcards (like `*` or `s3:*`) in the policy actions, allowing you to detect over-privileged permissions.
 
 ### [iamrole_tf.py](https://github.com/jibin006/Aws_cloud-security/blob/main/AWS/iamrole_tf.py)
-- **Purpose:** Script (details not displayed here) likely focused on managing AWS IAM roles, possibly with integration for Terraform-managed resources or related automation functions.
+- **Purpose:** Script likely focused on managing AWS IAM roles, possibly with integration for Terraform-managed resources or related automation functions.
 
 ### [s3_enable.py](https://github.com/jibin006/Aws_cloud-security/blob/main/AWS/s3_enable.py)
-- **Purpose:** Script (details not displayed here), typically for enabling certain security configurations on AWS S3 buckets, such as enforcing encryption, modifying bucket policies, or automated auditing.
+- **Purpose:** Script, typically for enabling certain security configurations on AWS S3 buckets, such as enforcing encryption, modifying bucket policies, or automated auditing.
 
 ### [vpc_security_checker.py](https://github.com/jibin006/Aws_cloud-security/blob/main/AWS/vpc_security_checker.py)
 - **Purpose:** Audits VPC-level security, specifically:
